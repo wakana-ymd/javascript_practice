@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>２つのリース取引を比較</title>
+    <!--styleタグはCSSを書き込む-->
+    <style>
+        body{
+            background-color: #ebebeb;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .highlight1{
+            font-weight: bold;/*太字*/
+            color: #ec5827;
+            text-decoration: underline;
+        }
+        .highlight2{
+            font-weight: bold;/*太字*/
+            color: #4811b6;
+            font-size: 1.1em;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #d0e0f1d4;
+            font-size: 1.0em;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f1f1f1; /* 偶数行を少し色付け */
+        }
+        tr:hover {
+            background-color: #dcedc8; /* マウスオーバーで強調 */
+        }
+        caption {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ファイナンス・リース と オペレーティング・リース</h2>
+    <h3>ファイナンス・リースとは</h3>
+    <p>
+        貸し手が借り手の代わりにリースする商品を購入し、借り手に貸す取引のこと。
+        借り手側にとっては、商品を<span class="highlight1">分割購入</span>するのと同じ。<br>
+        原則ではリース取引終了後、所有権が借り手に移転する。しかし日商簿記２級では、
+        例外である所有権移転無しの取引である、<span class="highlight1">利子込み法と利子抜き法</span>が扱われる。
+    </p>
+    <h3>オペレーティング・リースとは</h3>
+    <p>
+        借り手が金銭を支払い、貸し手から資産を<span class="highlight1">レンタル</span>する取引のこと。
+    </p>
+    
+    <table>
+        <caption>リースの種類比較</caption>
+        <thead>
+            <tr>
+                <th>ファイナンス・リース</th>
+                <th>オペレーティング・リース</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>途中解約NG🚫</td>
+                <td>途中解約OK✅（違約金発生）</td>
+            </tr>
+            <tr>
+                <td>実質、商品を購入するのと同じ。(フルペイアウト)</td>
+                <td>リース取引終了後、資産は貸し手に返す。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <h3>📚会計上の処理について</h3>
+    <h3>ファイナンス・リース</h3>
+    <p>
+        <span class="highlight2">勘定科目</span>：リース資産(資産)、リース債務(負債)<br>
+        <span class="highlight2">利子込み法</span>：リース料総額をリース資産として計上する。<br>
+        <span class="highlight2">利子抜き法</span>：リース料総額から<span class="highlight1">利息相当額を控除</span>した金額をリース資産として計上する。
+    </p>
+    <h3>例題　開始仕訳</h3>
+    <p>
+        当期首であるX4年4月1日に下記の内容で備品についてリース契約を結んだ。<br>
+        リース期間：5年<br>
+        見積現金購入価格：4,400円<br>
+        年間リース料：1,000円(毎年3/31支払い)<br><br>
+    </p>
+    <table>
+        <caption>利子込み法</caption>
+        <tbody>
+            <tr>
+                <td>リース資産　5,000</td>
+                <td>リース債務　5,000</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        年間リース料 × リース期間
+    </p>
+    <table>
+        <caption>利子抜き法</caption>
+        <tbody>
+            <tr>
+                <td>リース資産　4,400</td>
+                <td>リース債務　4,400</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        利息相当額を控除した金額 = 現金購入価格
+    </p>
+
+    <br><h3>例題　リース料を支払ったとき</h3>
+    <p>
+        下記の備品について、X5年3月31日にリース料を現金で支払った。<br>
+        リース契約日：X4年4月1日<br>
+        リース期間：5年<br>
+        見積現金購入価格：4,400円<br>
+        年間リース料：1,000円(毎年3/31支払い)<br><br>
+    </p>
+    <table>
+        <caption>利子込み法</caption>
+        <tbody>
+            <tr>
+                <td>リース債務　1,000</td>
+                <td>現金　1,000</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>利子抜き法</caption>
+        <tbody>
+            <tr>
+                <td>リース債務　880<br>支払利息　120</td>
+                <td>現金　1,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><h3>例題　決算日</h3>
+    <p>
+        下記の備品について、X5年3月31日(決算日)に定額法(残存価格ゼロ、耐用年数はリース期間、間接法で記帳)によって減価償却を行う。<br>
+        リース契約日：X4年10月1日<br>
+        リース期間：5年<br>
+        見積現金購入価格：4,400円<br>
+        年間リース料：1,000円(毎年3/31支払い)<br><br>
+    </p>
+    <table>
+        <caption>利子込み法</caption>
+        <tbody>
+            <tr>
+                <td>減価償却　500</td>
+                <td>リース資産減価償却累計額　500</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        5,000円/5年 × 6ヶ月/12ヶ月 = 500円
+    </p>
+    <table>
+        <caption>利子抜き法</caption>
+        <tbody>
+            <tr>
+                <td>減価償却　440</td>
+                <td>リース資産減価償却累計額　440</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        4,400円/5年 × 6ヶ月/12ヶ月 = 440円
+    </p>
+
+    <br><h3>例題　決算日(利子抜き法のみ)</h3>
+    <p>
+        下記の備品について、X5年3月31日(決算日)に利息相当額の未払い計上を行う。<br>
+        リース契約日：X4年10月1日<br>
+        リース期間：5年<br>
+        見積現金購入価格：4,400円<br>
+        年間リース料：1,000円(毎年9/30支払い)<br><br>
+    </p>
+    <table>
+        <caption>利子抜き法</caption>
+        <tbody>
+            <tr>
+                <td>支払利息　60</td>
+                <td>未払利息　60</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        年間利息:600円/5年 × 6ヶ月/12ヶ月 = 60円
+    </p>
+
+
+    <script src="1224.js"></script>
+    <noscript>JavaScriptが利用できません。</noscript>
+</body>
+
+</html>
